@@ -2,7 +2,7 @@
  * @Author: Faith
  * @Date: 2022-03-16 10:02
  * @LastAuthor: Faith
- * @LastEditTime: 2022-09-28 15:12
+ * @LastEditTime: 2022-09-28 21:56
  * @Description:
  */
 
@@ -21,6 +21,17 @@ const input_stu_id = document.querySelector('[name="stu_id"]')
 const input_tutor = document.querySelector('[name="tutor"]')
 const submit = document.querySelector('#submit')
 
+let num
+function randomNum() {
+  if (localStorage.getItem('num')) {
+    num = localStorage.getItem('num')
+  } else {
+    num = Math.floor(Math.random() * 60)
+    localStorage.setItem('num', num)
+  }
+}
+randomNum()
+
 function getStore(name) {
   return localStorage.getItem(name)
 }
@@ -30,15 +41,14 @@ function setStore(name, value) {
 }
 
 function setFormCookie() {
-  let data = []
-
+  // let data = []
+  localStorage.clear()
   formData.forEach((dom) => {
     let name = dom.getAttribute('name')
     let value = dom.value
-    console.log(value)
     setStore(name, value)
-    setCookie(name, value)
-    data.push({ name, value })
+    // setCookie(name, value)
+    // data.push({ name, value })
   })
   location.href = '../index.html'
   //   console.log(data)
@@ -54,12 +64,17 @@ function setFormCookie() {
 //   location.href = '../index.html'
 // })
 
-function setDefaultData(name) {
-  const value = getCookie(name)
-  if (value) {
-    return value
-  }
+function setDefaultData() {
+  formData.forEach((dom) => {
+    let name = dom.getAttribute('name')
+    let value = getStore(name)
+    console.log(value)
+    if (value) {
+      dom.value = value
+    }
+  })
 }
+
 input_name.addEventListener('blur', (e) => {
   try {
     input_name.parentElement.parentElement.classList.remove('has-warning')
@@ -101,3 +116,32 @@ input_class.addEventListener('blur', (e) => {
     input_class.after(span)
   }
 })
+
+function getTime() {
+  let nowtime = new Date()
+  let years = nowtime.getFullYear()
+  let month = doubleNum(nowtime.getMonth() + 1)
+  let day = doubleNum(nowtime.getDate())
+  let hours = nowtime.getHours()
+  let minutes = nowtime.getMinutes()
+  let seconds = nowtime.getSeconds()
+
+  input_start_time.value = `${years}-${month}-${day} ${doubleNum(hours - 1)}:${doubleNum(
+    Math.abs(minutes - num)
+  )}:${doubleNum(Math.abs(seconds - num))}`
+  // input_start_time.value =
+  input_leave_time.value = `${years}-${month}-${day} ${doubleNum(hours + 1)}:${doubleNum(
+    Math.abs(minutes - num)
+  )}:${doubleNum(Math.abs(seconds - num))}`
+  // console.log(input_start_time.value)
+}
+getTime()
+
+function doubleNum(num) {
+  if (num < 10) return '0' + num
+  return num
+}
+
+setTimeout(() => {
+  setDefaultData()
+}, 500)

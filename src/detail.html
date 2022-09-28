@@ -62,7 +62,7 @@
                             <p class="weui_media_desc">姓名: <span data-v-dc644556="" class="value" id="name">王德发</span>
                             </p>
                             <p class="weui_media_desc">学院: <span data-v-dc644556="" class="value"
-                                    id="college">华北科技学院本科生,建筑工程学院,地理信息科学(05134),地信B192</span></p>
+                                    id="college">画饼科技学院</span></p>
                             <p class="weui_media_desc">班级: <span data-v-dc644556="" class="value"
                                     id="class">计算机B192</span></p>
                             <p class="weui_media_desc">手机: <span data-v-dc644556="" class="value" id="phone"></span></p>
@@ -86,7 +86,7 @@
                                     style="border-style:none">蔡徐坤</span></p>
                             <p class="weui_media_desc">请假人: <span data-v-dc644556="王德发" class="value" id="name"></span>
                             </p>
-                            <p class="weui_media_desc">日期时间: <span value="2022-09-21" id="start_time"
+                            <p class="weui_media_desc">日期时间: <span value="2022-09-21" id="date_time"
                                     style="border-style:none"></span></p>
                             <p id="remark" style="display:none;-webkit-line-clamp: 10;" class="weui_media_desc"></p>
                         </div>
@@ -110,7 +110,7 @@
                         <div class="weui_panel_hd">
                             <img src="../img/photo.jpg" class="reply-item-img" />
                             <a class="user-name" data-user-uuid="e52a9a63-a777-4f04-902a-817a597cc0ac"
-                                style="color: #3fb0fb; text-decoration: underline" id="tutor">李昆遥</a>
+                                style="color: #3fb0fb; text-decoration: underline" id="tutor">刘洋</a>
 
                             <a id="btn-reply" class="weui_btn weui_btn_mini weui_btn_primary"
                                 style="float: right">回复</a>
@@ -118,14 +118,14 @@
                         <div class="weui_panel_bd">
                             <div class="weui_media_box weui_media_text" style="padding: 5px 15px">
                                 <p class="weui_media_desc reply-opinions" style="display: inherit" id="tutorIssue">
-                                    不好意思，上午监考不能看手机，现在每天下午都有校内核酸检测，如想外出做，时间控制在两小时内
+                                    注意安全
                                 </p>
 
                                 <ul class="weui_media_info" style="margin-top: 0px">
                                     <li class="weui_media_info_meta" style="color: #999">
                                         <span style="color: #999">已通过</span>
                                     </li>
-                                    <li class="weui_media_info_meta" id="leave_time">2022-09-28 13:22</li>
+                                    <li class="weui_media_info_meta" id="start_time">2022-09-28 13:22</li>
                                     <li class="weui_media_info_meta" style="float: right; padding-right: 0px">
                                         用时3小时
                                     </li>
@@ -217,7 +217,8 @@
     <script>
         // weui_bar_item_on
         const Issue = document.querySelector("#tutorIssue")
-        Issue.textContent = localStorage.getItem("tutorIssue")
+        let text = localStorage.getItem("tutorIssue")
+        Issue.textContent = text
     </script>
 </body>
 
