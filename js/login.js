@@ -84,7 +84,7 @@ function nameSet(params) {
     Usrname.textContent = usrname // 设置标签间内容
   })
   // emergeName.setAttribute("value", `${usrname} 18133875274`);
-  emergeName.textContent = usrname + ' ' + phone
+  // emergeName.textContent = usrname + ' ' + phone
   phone_p.textContent = phone
 }
 
