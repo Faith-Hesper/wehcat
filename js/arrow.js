@@ -2,7 +2,7 @@
  * @Author: Faith
  * @Date: 2022-09-27 22:21
  * @LastAuthor: Faith
- * @LastEditTime: 2022-09-27 22:21
+ * @LastEditTime: 2022-09-27 23:24
  * @Description:
  */
 
@@ -17,6 +17,4 @@ arrow[0].addEventListener('click', (e) => {
     van.className = 'van-icon van-icon-arrow-up'
     desc.className = 'desc-wrap'
   }
-
-  // console.log(van.className);
 })

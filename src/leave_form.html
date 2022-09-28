@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="http://at.alicdn.com/t/font_3125574_dg7amy0ak5b.css"> -->
     <script src="https://at.alicdn.com/t/font_3125574_scj6r0fpek.js"></script>
+    <script src="../js/cookie.js"></script>
     <style>
         .icon {
             width: 1em;
@@ -35,7 +36,7 @@
                     <label class="control-label " for="">姓名</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="name" placeholder="王德发"
+                    <input type="text" class="form-control" name="name" placeholder="王德发"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -48,8 +49,8 @@
                     <label class="control-label " for="">学院</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="college"
-                        value="华北科技学院本科生,建筑工程学院,地理信息科学(05134),地信B192" aria-describedby="inputSuccess3Status">
+                    <input type="text" class="form-control" name="college" value="华北科技学院本科生,建筑工程学院,地理信息科学(05134),地信B192"
+                        aria-describedby="inputSuccess3Status">
                 </div>
             </div>
             <div class="form-group">
@@ -61,7 +62,7 @@
                     <label class="control-label " for="">班级</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="class" placeholder="地信B192"
+                    <input type="text" class="form-control" name="class" placeholder="地信B192"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -74,7 +75,7 @@
                     <label class="control-label " for="">手机</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="phone" placeholder="15511287200"
+                    <input type="text" class="form-control" name="phone" placeholder="15511287200"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -87,7 +88,7 @@
                     <label class="control-label " for="">离校原因</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="leave_reason" placeholder="看牙、核酸"
+                    <input type="text" class="form-control" name="leave_reason" placeholder="看牙、核酸"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -100,7 +101,7 @@
                     <label class="control-label " for="">离校去向</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="leave_to" placeholder="华北科技学院附近"
+                    <input type="text" class="form-control" name="leave_to" placeholder="华北科技学院附近"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -113,7 +114,7 @@
                     <label class="control-label " for="">请假天数</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="leave_day" placeholder="1"
+                    <input type="text" class="form-control" name="leave_day" placeholder="1"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -126,7 +127,7 @@
                     <label class="control-label " for="">开始时间</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="datetime" step="01" class="form-control" value="2021-12-18 09:30:02" name="start_time"
+                    <input type="datetime" step="01" class="form-control" value="2022-09-29 09:30:02" name="start_time"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -139,7 +140,7 @@
                     <label class="control-label " for="">结束时间</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="datetime" step="01" class="form-control " name="leave_time" value="2021-12-18 09:30:38"
+                    <input type="datetime" step="01" class="form-control" name="leave_time" value="2022-09-29 09:30:38"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -165,7 +166,7 @@
                     <label class="control-label " for="">学号</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="stu_id" placeholder="201804126110"
+                    <input type="text" class="form-control" name="stu_id" placeholder="201804126110"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
@@ -178,14 +179,22 @@
                     <label class="control-label " for="">导员</label>
                 </div>
                 <div class="col-xs-8">
-                    <input type="text" class="form-control " name="tutor" placeholder="刘洋"
+                    <input type="text" class="form-control" name="tutor" placeholder="刘洋"
                         aria-describedby="inputSuccess3Status">
                 </div>
             </div>
-            <input type="submit" value="提交" class="btn btn-primary btn-lg btn-block">
+            <input type="submit" value="提交" id="submit" class="btn btn-primary btn-lg btn-block">
         </form>
     </div>
     <script src="../js/form_check.js"></script>
+    <script>
+        const submit = document.querySelector("#submit")
+        submit.addEventListener('click', () => {
+            if (window.location.host) {
+                // location.href = ""
+            }
+        })
+    </script>
 </body>
 
 </html>

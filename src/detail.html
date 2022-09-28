@@ -36,10 +36,10 @@
                 <a class="weui_navbar_item weui_bar_item_on" id="btn-base">
                     处理表单
                 </a>
-                <a class="weui_navbar_item " id="btn-form">
+                <a class="weui_navbar_item " id="btn-form" href="./blank.html">
                     表单预览
                 </a>
-                <a class="weui_navbar_item" id="btn-flow">
+                <a class="weui_navbar_item" id="btn-flow" href="./blank.html">
                     查看流程
                 </a>
             </div>
@@ -59,28 +59,34 @@
                                     data-v-dc644556="" class="value" id="start_times"></span>
                             </p>
                             <p class="weui_media_desc">角色：学生</p>
-                            <p class="weui_media_desc">姓名: <span data-v-dc644556="" class="value" id="name"></span></p>
+                            <p class="weui_media_desc">姓名: <span data-v-dc644556="" class="value" id="name">王德发</span>
+                            </p>
                             <p class="weui_media_desc">学院: <span data-v-dc644556="" class="value"
                                     id="college">华北科技学院本科生,建筑工程学院,地理信息科学(05134),地信B192</span></p>
                             <p class="weui_media_desc">班级: <span data-v-dc644556="" class="value"
-                                    id="class">地信B192</span></p>
+                                    id="class">计算机B192</span></p>
                             <p class="weui_media_desc">手机: <span data-v-dc644556="" class="value" id="phone"></span></p>
                             <p class="weui_media_desc">离校原因: <span data-v-dc644556="" class="value"
                                     id="leave_reason">看牙</span></p>
-                            <p class="weui_media_desc">学号: <span value="2021-09-21" id="stu_id"
+                            <p class="weui_media_desc">学号: <span value="2022-09-21" id="stu_id"
                                     style="border-style:none"></span></p>
+                            <p class="weui_media_desc">离校: <span value="2022-09-21" style="border-style:none"></span>
+                            </p>
                             <p class="weui_media_desc">离校去向: <span data-v-dc644556="" class="value"
                                     id="leave_to">华北科技学院附近</span></p>
+                            <p class="weui_media_desc">行程轨迹及交通工具信息: <span data-v-dc644556="" class="value"
+                                    id="leave_to"></span></p>
                             <p class="weui_media_desc">请假天数: <span data-v-dc644556="" class="value"
                                     id="leave_day">1</span></p>
-                            <p class="weui_media_desc">开始时间:<span data-v-a01fb670="" value="2021-09-21"
+                            <p class="weui_media_desc">开始时间:<span data-v-a01fb670="" value="2022-09-21"
                                     id="start_time"></span></p>
-                            <p class="weui_media_desc">结束时间: <span data-v-a01fb670="" value="2021-09-21" id="leave_time"
+                            <p class="weui_media_desc">结束时间: <span data-v-a01fb670="" value="2022-09-21" id="leave_time"
                                     style="border-style:none"></span></p>
-                            <p class="weui_media_desc">紧急联系人: <span value="2021-09-21" id="emergeName"
-                                    style="border-style:none"></span></p>
-                            <p class="weui_media_desc">请假人: <span data-v-dc644556="" class="value" id="name"></span></p>
-                            <p class="weui_media_desc">日期时间: <span value="2021-09-21" id="start_time"
+                            <p class="weui_media_desc">紧急联系人: <span value="蔡徐坤 " id="emergeName"
+                                    style="border-style:none">蔡徐坤</span></p>
+                            <p class="weui_media_desc">请假人: <span data-v-dc644556="王德发" class="value" id="name"></span>
+                            </p>
+                            <p class="weui_media_desc">日期时间: <span value="2022-09-21" id="start_time"
                                     style="border-style:none"></span></p>
                             <p id="remark" style="display:none;-webkit-line-clamp: 10;" class="weui_media_desc"></p>
                         </div>
@@ -119,7 +125,7 @@
                                     <li class="weui_media_info_meta" style="color: #999">
                                         <span style="color: #999">已通过</span>
                                     </li>
-                                    <li class="weui_media_info_meta" id="leave_time">2021-12-18 13:22</li>
+                                    <li class="weui_media_info_meta" id="leave_time">2022-09-28 13:22</li>
                                     <li class="weui_media_info_meta" style="float: right; padding-right: 0px">
                                         用时3小时
                                     </li>
@@ -139,7 +145,7 @@
 
                                 <ul class="weui_media_info" style="margin-top: 0px">
                                     <li class="weui_media_info_meta" style="color: #999">已浏览</li>
-                                    <li class="weui_media_info_meta" id="leave_time">2021-12-18 13:23</li>
+                                    <li class="weui_media_info_meta" id="leave_time">2022-09-28 13:23</li>
                                     <li class="weui_media_info_meta" style="float: right; padding-right: 0px">
                                         用时1分钟
                                     </li>
@@ -203,11 +209,15 @@
         </div>
         <script src="../js/login.js"></script>
         <div
-            style="position: absolute; color: #999;  z-index: 55; background-color:#e5e5e5; bottom: 0px; text-align: center; overflow: hidden; width: 100%; height: auto;">
+            style="position: absolute; color: #999;  z-index: 55; background-color:#fff; bottom: 0px; text-align: center; overflow: hidden; width: 100%; height: auto;">
             <input type="button" value="后续处理"
-                style="width: 300px; border-radius: 0.25rem; margin-top: 1px; height: 45px; color: black; background-color:#cecece;">
+                style="width: 300px; border-color: #fff; border-radius: 0.25rem; margin-top: 1px; height: 45px; color: black; background:#cecece 20;">
         </div>
     </div>
+    <script>
+        // weui_bar_item_on
+        const topBar = document.querySelector(".weui_navbar .weui_navbar_item")
+    </script>
 </body>
 
 </html>
