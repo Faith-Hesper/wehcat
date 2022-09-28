@@ -117,7 +117,7 @@
                         </div>
                         <div class="weui_panel_bd">
                             <div class="weui_media_box weui_media_text" style="padding: 5px 15px">
-                                <p class="weui_media_desc reply-opinions" style="display: inherit">
+                                <p class="weui_media_desc reply-opinions" style="display: inherit" id="tutorIssue">
                                     不好意思，上午监考不能看手机，现在每天下午都有校内核酸检测，如想外出做，时间控制在两小时内
                                 </p>
 
@@ -216,7 +216,8 @@
     </div>
     <script>
         // weui_bar_item_on
-        const topBar = document.querySelector(".weui_navbar .weui_navbar_item")
+        const Issue = document.querySelector("#tutorIssue")
+        Issue.textContent = localStorage.getItem("tutorIssue")
     </script>
 </body>
 

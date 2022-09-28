@@ -2,7 +2,7 @@
  * @Author: Faith
  * @Date: 2022-03-16 10:02
  * @LastAuthor: Faith
- * @LastEditTime: 2022-09-28 09:21
+ * @LastEditTime: 2022-09-28 15:12
  * @Description:
  */
 
@@ -19,19 +19,40 @@ const input_leave_time = document.querySelector('[name="leave_time"]')
 const input_emergeName = document.querySelector('[name="emergeName"]')
 const input_stu_id = document.querySelector('[name="stu_id"]')
 const input_tutor = document.querySelector('[name="tutor"]')
+const submit = document.querySelector('#submit')
+
+function getStore(name) {
+  return localStorage.getItem(name)
+}
+
+function setStore(name, value) {
+  return localStorage.setItem(name, value)
+}
 
 function setFormCookie() {
   let data = []
+
   formData.forEach((dom) => {
     let name = dom.getAttribute('name')
-    let value = dom.getAttribute('value')
-    // setCookie(name, value)
+    let value = dom.value
+    console.log(value)
+    setStore(name, value)
     setCookie(name, value)
     data.push({ name, value })
   })
+  location.href = '../index.html'
   //   console.log(data)
 }
-setFormCookie()
+
+// setFormCookie()
+
+// submit.addEventListener('click', () => {
+//   if (window.location.host) {
+//     // location.href = ""
+//   }
+//   console.log('object')
+//   location.href = '../index.html'
+// })
 
 function setDefaultData(name) {
   const value = getCookie(name)

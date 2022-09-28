@@ -88,8 +88,48 @@ function nameSet(params) {
   phone_p.textContent = phone
 }
 
+function getStore(name) {
+  return localStorage.getItem(name)
+}
+function localData() {
+  Usrname.forEach((Usrname) => {
+    Usrname.textContent = getStore('name') // 设置标签间内容
+  })
+  emergeName.textContent = getStore('name') + ' ' + getStore('phone')
+  stu_ids.textContent = getStore('stu_id')
+  college.textContent = getStore('college')
+  clases.textContent = getStore('class')
+  phone_p.textContent = getStore('phone')
+  leave_reason.textContent = getStore('leave_reason')
+  leave_to.textContent = getStore('leave_to')
+  leave_day.textContent = getStore('leave_day')
+  start_time.forEach((start_time) => {
+    start_time.textContent = getStore('start_time')
+  })
+  leave_time.forEach((leave_time) => {
+    leave_time.textContent = getStore('leave_time')
+  })
+  try {
+    var time = getStore('start_time')
+    time = time.substring(0, time.length - 3)
+    if (startTime != null) {
+      //console.log(time)
+      startTime.textContent = `${getStore('name')} 发起于 ${time}`
+    } else {
+      start_times.textContent = `${time}`
+      // 详情页导员名字
+      tutor_a.forEach((tutor_a) => {
+        tutor_a.textContent = getStore('tutor')
+      })
+    }
+  } catch (error) {}
+}
+
 function set_form(argument) {
-  if ($.cookie('name') == null) return
+  if ($.cookie('name') == null) {
+    localData()
+    return
+  }
   console.log($.cookie('stu_id'))
   Usrname.forEach((Usrname) => {
     Usrname.textContent = $.cookie('name') // 设置标签间内容
@@ -105,7 +145,7 @@ function set_form(argument) {
   start_time.forEach((start_time) => {
     start_time.textContent = $.cookie('start_time')
   })
-  leave_time.forEach((start_time) => {
+  leave_time.forEach((leave_time) => {
     leave_time.textContent = $.cookie('leave_time')
   })
   try {
@@ -125,11 +165,11 @@ function set_form(argument) {
 }
 
 function main(argument) {
-  //   if ($.cookie('name')) {
-  set_form()
-  //   } else {
-  showTime()
-  //   }
+  if ($.cookie('name')) {
+    set_form()
+  } else {
+    showTime()
+  }
 }
 
 window.onload = main
