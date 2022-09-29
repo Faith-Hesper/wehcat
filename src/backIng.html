@@ -122,6 +122,10 @@
       return localStorage.getItem(name)
     }
 
+    Usrname.forEach((Usrname) => {
+      Usrname.textContent = getStore('name') // 设置标签间内容
+    })
+
     var time = getStore('start_time')
     time = time.substring(0, time.length - 3)
 
