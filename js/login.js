@@ -9,6 +9,7 @@ const emergeName = document.getElementById('emergeName') // 紧急联系人
 const start_time = document.querySelectorAll('#start_time')
 const leave_time = document.querySelectorAll('#leave_time')
 const date_time = document.querySelector('#date_time')
+const reply_time = document.querySelectorAll('#reply_time')
 const Usrname = document.querySelectorAll('#name')
 const tutor_a = document.querySelectorAll('#tutor') // 导员
 const stu_ids = document.getElementById('stu_id') // 学号
@@ -92,6 +93,7 @@ function nameSet(params) {
 function getStore(name) {
   return localStorage.getItem(name)
 }
+
 function localData() {
   Usrname.forEach((Usrname) => {
     Usrname.textContent = getStore('name') // 设置标签间内容
@@ -110,12 +112,16 @@ function localData() {
   leave_time.forEach((leave_time) => {
     leave_time.textContent = getStore('leave_time')
   })
-  var time = getStore('start_time')
-  time = time.substring(0, time.length - 3)
-  const date = time.substring(0, time.length - 6)
-  date_time.textContent = date
-  console.log(date)
+  reply_time.forEach((reply_time) => {
+    reply_time.textContent = getStore('reply_time')
+  })
+
   try {
+    var time = getStore('start_time')
+    time = time.substring(0, time.length - 3)
+    const date = time.substring(0, time.length - 6)
+    date_time.textContent = date
+    // console.log(date)
     if (startTime != null) {
       //console.log(time)
       startTime.textContent = `${getStore('name')} 发起于 ${time}`
@@ -169,7 +175,9 @@ function set_form(argument) {
 }
 
 function main(argument) {
-  localData()
+  if (getStore('name')) {
+    localData()
+  }
   // if ($.cookie('name')) {
   //   set_form()
   // } else {

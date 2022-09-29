@@ -2,7 +2,7 @@
  * @Author: Faith
  * @Date: 2022-03-16 10:02
  * @LastAuthor: Faith
- * @LastEditTime: 2022-09-28 21:56
+ * @LastEditTime: 2022-09-29 16:50
  * @Description:
  */
 
@@ -27,6 +27,7 @@ function randomNum() {
     num = localStorage.getItem('num')
   } else {
     num = Math.floor(Math.random() * 60)
+    alert('你的幸运数字为' + num)
     localStorage.setItem('num', num)
   }
 }
@@ -42,7 +43,7 @@ function setStore(name, value) {
 
 function setFormCookie() {
   // let data = []
-  localStorage.clear()
+  // localStorage.clear()
   formData.forEach((dom) => {
     let name = dom.getAttribute('name')
     let value = dom.value
@@ -125,16 +126,22 @@ function getTime() {
   let hours = nowtime.getHours()
   let minutes = nowtime.getMinutes()
   let seconds = nowtime.getSeconds()
-
-  input_start_time.value = `${years}-${month}-${day} ${doubleNum(hours - 1)}:${doubleNum(
-    Math.abs(minutes - num)
-  )}:${doubleNum(Math.abs(seconds - num))}`
+  const start_time = `${years}-${month}-${day} ${doubleNum(hours - 1)}:${doubleNum(
+    Math.abs(minutes)
+  )}:${doubleNum(Math.abs(seconds))}`
   // input_start_time.value =
-  input_leave_time.value = `${years}-${month}-${day} ${doubleNum(hours + 1)}:${doubleNum(
-    Math.abs(minutes - num)
-  )}:${doubleNum(Math.abs(seconds - num))}`
+  const reply_time = `${years}-${month}-${day} ${doubleNum(hours)}:${doubleNum(
+    Math.abs(minutes - num + 1)
+  )}`
+  const leave_time = `${years}-${month}-${day} 22:${doubleNum(Math.abs(minutes - num))}:${doubleNum(
+    Math.abs(seconds - num)
+  )}`
+  setStore('start_time', start_time)
+  setStore('leave_time', leave_time)
+  setStore('reply_time', reply_time)
   // console.log(input_start_time.value)
 }
+
 getTime()
 
 function doubleNum(num) {
